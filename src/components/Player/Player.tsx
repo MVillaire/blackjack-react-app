@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
-import './PlayerHand.css';
+import './Player.css';
 
-function PlayerHand() {
+function Player() {
   return (
     <div className="PlayerHand">
 
@@ -10,4 +10,4 @@ function PlayerHand() {
   );
 }
 
-export default PlayerHand;
+export default Player;

@@ -2,11 +2,11 @@ import React from 'react';
 import logo from './logo.svg';
 import './DealerHand.css';
 
-function DealerHand() {
+function Dealer() {
   return (
-    <div className="DealerHand">
+    <div className="Dealer">
     </div>
   );
 }
 
-export default DealerHand;
+export default Dealer;
