@@ -1,10 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
-import './DealerHand.css';
+import './Dealer.css';
+import Hand from "../Hand/Hand"
 
 function Dealer() {
   return (
     <div className="Dealer">
+      <Hand />
     </div>
   );
 }

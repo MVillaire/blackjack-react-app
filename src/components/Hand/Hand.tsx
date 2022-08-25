@@ -1,12 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
-import './Card.css';
+import './Hand.css';
+import Card from "../Card/Card"
 
-function Card() {
+function Hand() {
   return (
-    <div className="Card">
+    <div>
+      <Card />
     </div>
   );
 }
 
-export default Card;
+export default Hand;
