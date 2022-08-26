@@ -1,7 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
-import './Hand.css';
-import Card from "../Card/Card"
+import React from "react";
+import logo from "./logo.svg";
+import "./Hand.css";
+import Card from "../Card/Card";
 
 function Hand() {
   return (
