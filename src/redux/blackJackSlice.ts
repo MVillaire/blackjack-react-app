@@ -1,50 +1,55 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { CardType, DeckType } from "../types"
 
 const playerObject = {
-    name: 'Player1',
-    hand: [],
-    playerSurrender: false,
-    wallet: 100,
-    bet: 0
+  name: "Player1",
+  hand: [] as CardType[],
+  playerSurrender: false,
+  wallet: 100,
+  bet: 0,
 };
 
 const dealerObject = {
-    hand: [],
+  hand: [] as CardType[],
 };
 
 const initialState = {
-    player: [],
-    dealer: dealerObject,
-  };
+  players: [playerObject],
+  dealer: dealerObject,
+  deck: {} as DeckType,
+};
 
 export type blackJackState = typeof initialState;
 export type playerType = typeof playerObject;
 export type dealerType = typeof dealerObject;
 
-
 const blackJackSlice = createSlice({
   name: "blackJackSlice",
   initialState: initialState,
   reducers: {
-    increaseBet: (state:blackJackState) => {
-        
+    increaseBet: (state: blackJackState) => {},
+    decreaseBet: (state: blackJackState) => {},
+    newGame: (state: blackJackState) => {},
+    drawPlayerCard: (state: blackJackState, action: any) => {
+      state.players[0].hand.push(action.payload as CardType)
     },
-    decreaseBet: (state: blackJackState) => {
-        
+    drawDealerCard: (state: blackJackState, action: any) => {
+      state.dealer.hand.push(action.payload as CardType)
     },
-    newGame: (state: blackJackState) => {
-        
-    },
-    addNewPlayerCard: (state: blackJackState) => {
-        
-    },
-    openDealerCard: (state: blackJackState) => {
-        
+    setDeck: (state: blackJackState, action: any) => {
+      state.deck = action.payload;
     },
   },
 });
 
 // Action creators (generated automatically)
-export const { decreaseBet, increaseBet, newGame, addNewPlayerCard, openDealerCard } = blackJackSlice.actions;
+export const {
+  decreaseBet,
+  increaseBet,
+  newGame,
+  drawPlayerCard,
+  drawDealerCard,
+  setDeck,
+} = blackJackSlice.actions;
 
 export const blackJackReducer = blackJackSlice.reducer;

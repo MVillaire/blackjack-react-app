@@ -3,11 +3,18 @@ import logo from "../../logo.svg";
 import { AppRoot } from "./App.styles";
 import Table from "../Table/Table";
 import "./App.css";
+import store from "../../redux/store";
+import { Provider } from "react-redux";
 
 const App = () => {
   return (
+    // <AppRoot>
+    //   <Table />
+    // </AppRoot>
     <AppRoot>
-      <Table />
+      <Provider store={store}>
+        <Table />
+      </Provider>
     </AppRoot>
   );
 };
